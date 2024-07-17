@@ -1,0 +1,36 @@
+<html>
+   <head>
+       <title>Login page</title>
+       <script>
+       function loginvalidation()
+       {
+           var user = window.document.myform.user.value;
+           var pass = window.document.myform.pass.value;
+           if (user.length==0 && pass.length==0){
+              alert("Enter username and password !");
+              return false;
+            }
+            else if(pass.length==0){
+              alert("Enter password!");
+              return false;
+            }
+            else if(pass.length<6){
+               alert("Password length is minimum 6 characters");
+               return false;
+            }
+            else{
+               return true;
+            }
+        }
+        </script>
+    </head>
+    <body>
+    <form name="myform" action="./Loginsucces.html" onsubmit="return loginvalidation(this)">
+    <center><br>
+    Username: <input type="text" name="user" autofocus><br><br>
+    Password: <input type="password" name="pass"><br><br>
+    <input type="submit" value="submit">
+    </center>
+    </form>
+    </body>
+</html>
